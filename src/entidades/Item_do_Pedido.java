@@ -40,7 +40,21 @@ public class Item_do_Pedido {
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
-	
+	public double subTotal() {
+		return preco * quantidade;
+	}
+
+	@Override
+	public String toString() {
+		return getProduto().getNome()
+				+ ",Valor: $"
+				+ String.format("%.2f", preco)
+				+ ", Quantidade: "
+				+ quantidade
+				+ ", subTotal: $"
+				+ String.format("%.2f", subTotal());
+				
+	}
 	
 
 }

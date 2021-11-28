@@ -11,7 +11,7 @@ public class Programa {
 		
 		Item_do_Pedido ip1 = new Item_do_Pedido(1,1000.00, p);
 		
-		System.out.println(ip1.getPreco());
+		System.out.println(ip1);
 		
 
 	}
