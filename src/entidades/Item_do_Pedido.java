@@ -47,7 +47,7 @@ public class Item_do_Pedido {
 	@Override
 	public String toString() {
 		return getProduto().getNome()
-				+ ",Valor: $"
+				+ ",Valor da unidade: $"
 				+ String.format("%.2f", preco)
 				+ ", Quantidade: "
 				+ quantidade
