@@ -49,5 +49,20 @@ public class Pedido {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+	
+	public void addItem(Item_do_Pedido item) {
+		itens.add(item);
+	}
+	public void removeItem(Item_do_Pedido item) {
+		itens.remove(item);
+	}
+	public double total() {
+		double soma = 0.0;
+		for (Item_do_Pedido ip : itens) {
+			soma = soma + ip.subTotal();
+		}
+		return soma;
+	}
+
 
 }
