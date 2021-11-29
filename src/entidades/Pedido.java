@@ -1,5 +1,6 @@
 package entidades;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -7,6 +8,8 @@ import java.util.List;
 import entidades.enums.EstadoPedido;
 
 public class Pedido {
+	
+	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 	
 	private Date momento;
 	private EstadoPedido estado;
@@ -62,6 +65,23 @@ public class Pedido {
 			soma = soma + ip.subTotal();
 		}
 		return soma;
+	}
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Momento do Pedido: ");
+		sb.append(sdf.format(momento)+ "\n");
+		sb.append("EstadoPedido: ");
+		sb.append(estado + "n");
+		sb.append("Cliente: ");
+		sb.append(cliente + "\n");
+		sb.append("Pedido itens:\n");
+		for (Item_do_Pedido item : itens) {
+			sb.append(item + "\n");
+		}
+		sb.append("Total preço: $");
+		sb.append(String.format("2.f",total()));
+		return sb.toString();
 	}
 
 
