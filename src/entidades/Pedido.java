@@ -23,7 +23,7 @@ public class Pedido {
 	}
 
 	public Pedido(Date momento, EstadoPedido estado, Cliente cliente) {
-		super();
+		
 		this.momento = momento;
 		this.estado = estado;
 		this.cliente = cliente;
@@ -72,7 +72,7 @@ public class Pedido {
 		sb.append("Momento do Pedido: ");
 		sb.append(sdf.format(momento)+ "\n");
 		sb.append("EstadoPedido: ");
-		sb.append(estado + "n");
+		sb.append(estado + "\n");
 		sb.append("Cliente: ");
 		sb.append(cliente + "\n");
 		sb.append("Pedido itens:\n");
@@ -80,7 +80,7 @@ public class Pedido {
 			sb.append(item + "\n");
 		}
 		sb.append("Total preço: $");
-		sb.append(String.format("2.f",total()));
+		sb.append(String.format("%2.f", total()));
 		return sb.toString();
 	}
 
